@@ -23,3 +23,32 @@ Key features of MongoDB include:
 
 • Automatic parallelization and support for distributed databases.
 
+### MongoDB Nedir ? Ne İşe Yarar ?
+
+MongoDB, NoSQL (Non-SQL) veritabanı yönetim sistemlerinden biridir. Verileri doküman tabanlı bir yapıda depolar ve JSON benzeri BSON formatını kullanır. MongoDB'nin esnek şema yapısı, veri modellerini dinamik olarak değiştirmenize olanak tanır. Bu özellik, uygulama gereksinimlerindeki değişikliklere hızlı bir şekilde uyum sağlama avantajı sunar. MongoDB'nin dağıtık veritabanı özellikleri, büyük ve ölçeklenebilir veri setleri üzerinde etkili bir şekilde çalışabilmesini sağlar.
+
+MongoDB'nin temel özellikleri şunlardır:
+
+• Doküman tabanlı veri modeli.
+
+• Esnek şema yapısı.
+
+• JSON benzeri BSON formatı.
+
+• Yüksek performanslı sorgu işleme.
+
+• Otomatik paralelizasyon ve dağıtık veritabanı desteği.
+
+## Before installing, Lets update and upgrade System Packages.
+
+
+## Kurulumdan önce Sistem Paketlerini güncelleyelim.
+
+
+```
+apt-get update
+```
+
+```
+apt-get upgrade
+```
