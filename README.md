@@ -54,19 +54,6 @@ apt-get upgrade
 ```
 
 
-## Install wget and unzip package.
-
-
-## Wget'i yükleyin ve paketi çıkartın.
-
-
-```
-apt-get install wget unzip -y
-```
-
-
-![image](https://github.com/R4ynaud/SonarQube-Community-Edition-Installation-configuration-on-Ubuntu-22.04/assets/93924485/67ebdb4b-5855-4687-87e5-de0fcdd62f22)
-
 
 ## You need to update with the IP address and host name of the main machine.
 
