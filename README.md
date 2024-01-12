@@ -258,9 +258,9 @@ sudo su
 ```
 
 
-## Run the following command to create the 'keyfile'.
+## Run the following commands to create the 'keyfile'.
 
-## 'keyfike' dosyasını oluşturmak için aşağıdaki komutu çalıştırın.
+## 'keyfike' dosyasını oluşturmak için aşağıdaki komutları çalıştırın.
 
 
 ```
@@ -270,23 +270,81 @@ apt-get install genometools
 ![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/6018c7f1-4199-48b7-b36a-82cf7d0e0aa5)
 
 
+```
+chmod 400 /mnt/keyfile
+```
+
+```
+chown mongodb:mongodb /mnt/keyfile
+```
+
 
 ```
 openssl rand -base64 756 &gt; /mnt/keyfile
 ```
+  
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/85935767-6aa2-4558-ad9d-51267c41f67f)
+
+  
+## Edit the 'mongod.conf' file for the Master Node by running the following commands. 
+
+## Aşağıdaki komutları çalıştırarak Master Node için 'mongod.conf' dosyasını düzenleyin.
+
+```
+# mongod.conf
+
+# for documentation of all options, see:
+#   http://docs.mongodb.org/manual/reference/configuration-options/
+
+# Where and how to store data.
+storage:
+  dbPath: /var/lib/mongodb
+  journal:
+    enabled: true
+#  engine:
+#  wiredTiger:
+
+# where to write logging data.
+systemLog:
+  destination: file
+  logAppend: true
+  path: /var/log/mongodb/mongod.log
+
+# network interfaces
+net:
+  port: 27017
+  bindIp: 127.0.0.1,mongo-master-node
+
+
+# how the process runs
+processManagement:
+  timeZoneInfo: /usr/share/zoneinfo
+
+#security:
+
+keyFile: /mnt/keyfile
 
 
 
+#operationProfiling:
+
+#replication:
+
+replSetName: "replica01"
 
 
+#sharding:
 
+## Enterprise-Only Options:
 
+#auditLog:
 
+#snmp:
 
+```
 
-
-
-
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/ec48bad9-00b0-444c-bd30-44b5fe2862fb)
 
 
 
