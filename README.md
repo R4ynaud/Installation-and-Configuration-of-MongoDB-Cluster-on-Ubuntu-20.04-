@@ -356,9 +356,9 @@ replSetName: "replica01"
 ![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/ec48bad9-00b0-444c-bd30-44b5fe2862fb)
 
 
-# Follow the steps below for the Node-2 configuration.
+# Follow the steps below for the Node-1 configuration.
 
-# Node-2 yapılandırması için aşağıdaki adımları izleyin. 
+# Node-1 yapılandırması için aşağıdaki adımları izleyin. 
 
 
 ## So, first, switch to root user.
@@ -458,7 +458,61 @@ replSetName: "replica01"
 
 ```
 
+```
+systemctl restart mongod
+```
+
+
 ![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/71bf1b13-765d-4bbc-8a3f-a155e94f3f88)
+
+
+
+# Follow the steps below for the Node-2 configuration.
+
+# Node-2 yapılandırması için aşağıdaki adımları izleyin. 
+
+
+## So, first, switch to root user.
+
+## Öncelikle root kullanıcısına geçin.
+
+```
+sudo su
+```
+
+
+## Run the following commands to create the 'keyfile'.
+
+## 'keyfile' dosyasını oluşturmak için aşağıdaki komutları çalıştırın.
+
+
+```
+apt-get install genometools
+```
+
+
+```
+mkdir /mnt/keyfile
+```
+
+```
+chmod 400 /mnt/keyfile
+```
+
+```
+chown mongodb:mongodb /mnt/keyfile
+```
+
+
+```
+openssl rand -base64 756 &gt; /mnt/keyfile
+```
+
+
+
+## Edit the 'mongod.conf' file for the Node-2 by running the following commands. 
+
+## Aşağıdaki komutları çalıştırarak Node-2 için 'mongod.conf' dosyasını düzenleyin.
 
 
 
