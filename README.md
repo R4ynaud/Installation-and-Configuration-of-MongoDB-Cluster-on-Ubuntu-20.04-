@@ -198,7 +198,16 @@ systemctl status mongod
 
 
 
+## Run the following command to access MongoDB.
 
+## MongoDB'e erişmek için aşağıdaki komutu çalıştırın.
+
+
+```
+mongosh
+```
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/8aef6049-6d0a-4e03-a3b6-f95e0b457e77)
 
 
 
