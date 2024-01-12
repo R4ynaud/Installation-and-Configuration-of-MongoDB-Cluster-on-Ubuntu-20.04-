@@ -99,6 +99,72 @@ cat etc/hosts
 ![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/5232bf5d-a0a5-4f01-acee-5d58f0dac047)
 
 
+## Install wget and unzip package.
+
+
+## Wget'i yükleyin ve paketi çıkartın.
+
+
+```
+apt-get install wget unzip -y
+```
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/822b4a78-ab38-4421-a296-839c71501c7f)
+
+
+## Before installing, Lets update and upgrade System Packages.
+
+
+## Kurulumdan önce Sistem Paketlerini güncelleyelim.
+
+
+```
+apt-get update
+```
+
+```
+apt-get upgrade
+```
+
+
+## Once the system is up to date,  install the following essential packages.
+
+
+## Sistem güncellendikten sonra aşağıdaki temel paketleri yükleyin. 
+
+
+```
+apt install software-properties-common gnupg apt-transport-https ca-certificates -y
+```
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/1211742f-cd8a-47e1-9e61-25351b534000)
+
+
+## Begin by adding the  MongoDB GPG key.
+
+## MongoDB GPG anahtarını ekleyerek başlayın.
+
+```
+wget -qO - https://www.mongodb.org/static/pgp/server-5.0.asc | sudo apt-key add -
+```
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/dcc69a7a-2511-4c30-8d23-d47a2b55b2c0)
+
+
+## Later, add the MongoDB 5.0 repository to the /etc/apt/sources.list.d directory.
+
+## Daha sonra MongoDB 5.0 deposunu /etc/apt/sources.list.d dizinine ekleyin.
+
+
+```
+echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb-org/5.0 multiverse" | sudo tee /etc/apt/sources.list.d/mongodb-org-5.0.list
+```
+
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/76b556f1-147a-4885-b14d-08f82ed4df46)
+
+
+
 
 
 
