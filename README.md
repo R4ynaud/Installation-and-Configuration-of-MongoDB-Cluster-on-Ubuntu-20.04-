@@ -210,12 +210,36 @@ mongosh
 ![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/8aef6049-6d0a-4e03-a3b6-f95e0b457e77)
 
 
+## Execute the following query to switch to the admin user.
+
+## Admin kullanıcısına geçmek için aşağıdaki sorguyu çalıştırın. 
 
 
+```
+use admin
+```
+
+## To create a new admin user, execute the following query, and 'passwordPrompt()' will prompt you to enter the administrator password.
+
+## Yeni bir Admin kullanıcısı oluşturmak için aşağıdaki sorguyu çalıştırın, 'passwordPrompt()' sizden yönetici şifresini girmenizi isteyecektir. 
 
 
+```
+db.createUser(
+  {
+    user: "admin-user",
+    pwd: passwordPrompt(),
+    roles: [ { role: "root", db: "admin" }, "readWriteAnyDatabase" ]
+ }
+)
+```
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/c153d96a-ed31-4e4e-9d86-5c911f76f109)
 
 
+```
+exit
+```
 
 
 
