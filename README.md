@@ -164,7 +164,14 @@ echo "deb [ arch=amd64,arm64 ] https://repo.mongodb.org/apt/ubuntu focal/mongodb
 ![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/76b556f1-147a-4885-b14d-08f82ed4df46)
 
 
+## Now, run the following command to install the MongoDB database. 
 
+## Şimdi MongoDB veritabanını kurmak için aşağıdaki komutu çalıştırın.
+
+
+```
+
+```
 
 
 
