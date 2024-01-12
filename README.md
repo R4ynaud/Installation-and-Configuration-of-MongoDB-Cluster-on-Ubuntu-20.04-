@@ -180,6 +180,22 @@ mongod --version
 ![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/928d2932-6739-4420-b038-bc2598bbd868)
 
 
+## We need to run the following commands to activate MongoDB database services.
+
+## MongoDB veritabanı servislerini aktif etmek için aşağıdaki komutları çalıştırmamız gerekiyor. 
+
+```
+systemctl start mongod
+```
+```
+systemctl enable mongod
+```
+```
+systemctl status mongod
+```
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/180e71f4-8418-4cd3-a9f3-c96ee8d99a1d)
+
 
 
 
