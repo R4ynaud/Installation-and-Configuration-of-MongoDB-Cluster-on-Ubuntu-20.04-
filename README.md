@@ -1,7 +1,7 @@
-# Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04
+# Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04 & 22.04
 
 
-Guide to SonarQube 8.9 Community Edition Installation & Configuration On Ubuntu 22.04
+Guide to SonarQube 8.9 Community Edition Installation & Configuration On Ubuntu 22.04 & 22.04
 
 
 ![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/cf7c4705-79e1-4dc5-80f2-0ee403accafe)
