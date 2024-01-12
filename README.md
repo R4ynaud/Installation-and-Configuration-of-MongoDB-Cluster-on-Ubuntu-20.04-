@@ -287,12 +287,18 @@ openssl rand -base64 756 &gt; /mnt/keyfile
 ```
   
 
-![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/85935767-6aa2-4558-ad9d-51267c41f67f)
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/a1aeee63-d031-45e8-92bb-d46c0e6cfc61)
+
 
   
 ## Edit the 'mongod.conf' file for the Master Node by running the following commands. 
 
 ## Aşağıdaki komutları çalıştırarak Master Node için 'mongod.conf' dosyasını düzenleyin.
+
+```
+vim  /etc/mongod.conf
+```
+
 
 ```
 # mongod.conf
@@ -390,4 +396,70 @@ chown mongodb:mongodb /mnt/keyfile
 ```
 openssl rand -base64 756 &gt; /mnt/keyfile
 ```
+
+
+## Edit the 'mongod.conf' file for the Node-2 by running the following commands. 
+
+## Aşağıdaki komutları çalıştırarak Node-2 için 'mongod.conf' dosyasını düzenleyin.
+
+
+```
+vim  /etc/mongod.conf
+```
+
+```
+# mongod.conf
+
+# for documentation of all options, see:
+#   http://docs.mongodb.org/manual/reference/configuration-options/
+
+# Where and how to store data.
+storage:
+  dbPath: /var/lib/mongodb
+  journal:
+    enabled: true
+#  engine:
+#  wiredTiger:
+
+# where to write logging data.
+systemLog:
+  destination: file
+  logAppend: true
+  path: /var/log/mongodb/mongod.log
+
+# network interfaces
+net:
+  port: 27017
+  bindIp: 127.0.0.1,mongo-node-1
+
+
+# how the process runs
+processManagement:
+  timeZoneInfo: /usr/share/zoneinfo
+
+#security:
+
+keyFile: /mnt/keyfile
+
+#operationProfiling:
+
+#replication:
+
+replSetName: "replica01"
+
+#sharding:
+
+## Enterprise-Only Options:
+
+#auditLog:
+
+#snmp:
+
+
+```
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/71bf1b13-765d-4bbc-8a3f-a155e94f3f88)
+
+
+
 
