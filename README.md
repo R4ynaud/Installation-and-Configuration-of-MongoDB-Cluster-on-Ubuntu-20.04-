@@ -64,7 +64,36 @@ apt-get upgrade
 apt-get install wget unzip -y
 ```
 
+
 ![image](https://github.com/R4ynaud/SonarQube-Community-Edition-Installation-configuration-on-Ubuntu-22.04/assets/93924485/67ebdb4b-5855-4687-87e5-de0fcdd62f22)
+
+
+## You need to update with the IP address and host name of the main machine.
+
+
+## Ana makinenin IP adresi ve ana bilgisayar adı ile güncelleme yapmamız gerekiyor.
+
+
+```
+vim etc/hosts
+```
+
+```
+192.168.152.156	mongo-master-node
+
+192.168.152.157 mongo-node-1
+
+192.168.152.158	mongo-node-2
+```
+
+```
+:wq!
+```
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/542763e8-3868-4e8e-a383-3498a3e71977)
+
+
+
 
 
 
