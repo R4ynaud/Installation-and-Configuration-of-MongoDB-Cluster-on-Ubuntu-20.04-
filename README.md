@@ -269,6 +269,9 @@ apt-get install genometools
 
 ![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/6018c7f1-4199-48b7-b36a-82cf7d0e0aa5)
 
+```
+mkdir /mnt/keyfile
+```
 
 ```
 chmod 400 /mnt/keyfile
@@ -347,5 +350,44 @@ replSetName: "replica01"
 ![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/ec48bad9-00b0-444c-bd30-44b5fe2862fb)
 
 
+# Follow the steps below for the Node-2 configuration.
 
+# Node-2 yapılandırması için aşağıdaki adımları izleyin. 
+
+
+## So, first, switch to root user.
+
+## Öncelikle root kullanıcısına geçin.
+
+```
+sudo su
+```
+
+
+## Run the following commands to create the 'keyfile'.
+
+## 'keyfile' dosyasını oluşturmak için aşağıdaki komutları çalıştırın.
+
+
+```
+apt-get install genometools
+```
+
+
+```
+mkdir /mnt/keyfile
+```
+
+```
+chmod 400 /mnt/keyfile
+```
+
+```
+chown mongodb:mongodb /mnt/keyfile
+```
+
+
+```
+openssl rand -base64 756 &gt; /mnt/keyfile
+```
 
