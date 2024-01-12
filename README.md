@@ -244,6 +244,45 @@ exit
 ```
 
 
+# Follow the steps below for the Master Node configuration.
+
+# Master node yapılandırması için aşağıdaki adımları izleyin. 
+
+
+## So, first, switch to root user.
+
+## Öncelikle root kullanıcısına geçin.
+
+```
+sudo su
+```
+
+
+## Run the following command to create the 'keyfile'.
+
+## 'keyfike' dosyasını oluşturmak için aşağıdaki komutu çalıştırın.
+
+
+```
+apt-get install genometools
+```
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/6018c7f1-4199-48b7-b36a-82cf7d0e0aa5)
+
+
+
+```
+openssl rand -base64 756 &gt; /mnt/keyfile
+```
+
+
+
+
+
+
+
+
+
 
 
 
