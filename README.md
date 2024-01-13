@@ -770,6 +770,15 @@ show dbs
 
 
 
+## Finally, execute the following query on all nodes, and you need to restart all your machines. After this process, MongoDB will start functioning as a cluster.
+
+
+## Ve son olarak aşağıdaki sorugu tüm nodlarda çalıştırıyoruz ve tüm makinalarımızı yeniden başlatmamız gerekiyor bu işlem sonunda MongoDB cluster olarak çalışmaya başlayacaktır.
+
+
+```
+db.getMongo().setReadPref("primaryPreferred")
+```
 
 
 
