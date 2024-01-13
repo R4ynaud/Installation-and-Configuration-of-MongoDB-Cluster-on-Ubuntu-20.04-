@@ -708,3 +708,66 @@ rs.status()
 }
 
 ```
+
+
+## To verify our cluster setup, we will create a new database and manually add data. Run the following queries sequentially.
+
+## ! NOTE: If the output of these commands is not as expected, there may be an issue; review all your installations once again.
+
+
+
+
+## Cluster yapımızı kontrol etmek için yeni bir veritabanı oluşturup manuel data ekleyeceğiz bunun için aşağıdaki sorguları sırası ile çalıştırmamız gerekiyor. 
+
+## ! NOT : Bu sorguların çıktısı aşağıdaki gibi değilse bir problem var demektir tekrardan tüm kurulumlarınızı gözden geçirin. 
+
+
+
+
+## 1-) 
+
+```
+mongosh
+```
+
+## 2-) 
+
+```
+use testdb
+```
+
+
+## 3-) 
+
+```
+db.employees.insert({Name: "Andrew", Age: 31, City: "Istanbul", Status: "Married"})
+```
+
+
+## 4-) 
+
+```
+db.employees.find()
+```
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/e84ee942-2a4a-404c-b91c-9bdc6859939e)
+
+
+
+## 5-) 
+
+```
+show dbs
+```
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/9bb7f8b5-ccb3-4754-8d54-cb55ae563dc4)
+
+
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/5da5083c-463f-4a58-a41f-fdcb08a95211)
+
+
+
+
+
+
