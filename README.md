@@ -370,34 +370,6 @@ sudo su
 ```
 
 
-## Run the following commands to create the 'keyfile'.
-
-## 'keyfile' dosyasını oluşturmak için aşağıdaki komutları çalıştırın.
-
-
-```
-apt-get install genometools
-```
-
-
-```
-mkdir /mnt/keyfile
-```
-
-```
-chmod 400 /mnt/keyfile
-```
-
-```
-chown mongodb:mongodb /mnt/keyfile
-```
-
-
-```
-openssl rand -base64 756 &gt; /mnt/keyfile
-```
-
-
 ## Edit the 'mongod.conf' file for the Node-2 by running the following commands. 
 
 ## Aşağıdaki komutları çalıştırarak Node-2 için 'mongod.conf' dosyasını düzenleyin.
@@ -430,7 +402,8 @@ systemLog:
 # network interfaces
 net:
   port: 27017
-  bindIp: 127.0.0.1,mongo-node-1
+  bindIp: 127.0.0.1, mongo-master-node
+
 
 
 # how the process runs
@@ -439,14 +412,11 @@ processManagement:
 
 #security:
 
-keyFile: /mnt/keyfile
+#operationProfilin
 
-#operationProfiling:
 
-#replication:
-
-replSetName: "replica01"
-
+replication:
+ replSetName: "mongorepl"
 #sharding:
 
 ## Enterprise-Only Options:
@@ -463,7 +433,8 @@ systemctl restart mongod
 ```
 
 
-![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/71bf1b13-765d-4bbc-8a3f-a155e94f3f88)
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/1b6f8960-13b7-4976-ae86-ce2552f8026b)
+
 
 
 
