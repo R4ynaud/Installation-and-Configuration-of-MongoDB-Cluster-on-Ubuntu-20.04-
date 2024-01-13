@@ -257,39 +257,6 @@ exit
 sudo su
 ```
 
-
-## Run the following commands to create the 'keyfile'.
-
-## 'keyfike' dosyasını oluşturmak için aşağıdaki komutları çalıştırın.
-
-
-```
-apt-get install genometools
-```
-
-![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/6018c7f1-4199-48b7-b36a-82cf7d0e0aa5)
-
-```
-mkdir /mnt/keyfile
-```
-
-```
-chmod 400 /mnt/keyfile
-```
-
-```
-chown mongodb:mongodb /mnt/keyfile
-```
-
-
-```
-openssl rand -base64 756 &gt; /mnt/keyfile
-```
-  
-
-![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/a1aeee63-d031-45e8-92bb-d46c0e6cfc61)
-
-
   
 ## Edit the 'mongod.conf' file for the Master Node by running the following commands. 
 
@@ -323,7 +290,8 @@ systemLog:
 # network interfaces
 net:
   port: 27017
-  bindIp: 127.0.0.1,mongo-master-node
+  bindIp: 127.0.0.1, mongo-master-node
+
 
 
 # how the process runs
@@ -332,17 +300,11 @@ processManagement:
 
 #security:
 
-keyFile: /mnt/keyfile
+#operationProfilin
 
 
-
-#operationProfiling:
-
-#replication:
-
-replSetName: "replica01"
-
-
+replication:
+ replSetName: "mongorepl"
 #sharding:
 
 ## Enterprise-Only Options:
@@ -353,7 +315,8 @@ replSetName: "replica01"
 
 ```
 
-![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/ec48bad9-00b0-444c-bd30-44b5fe2862fb)
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/28dbca0e-5b42-46ca-b58f-428384f6e9c6)
+
 
 
 # Follow the steps below for the Node-1 configuration.
