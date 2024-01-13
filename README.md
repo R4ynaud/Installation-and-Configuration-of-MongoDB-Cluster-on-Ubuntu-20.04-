@@ -786,8 +786,7 @@ db.getMongo().setReadPref("primaryPreferred")
 ## If you want to check the success of our installation, run the following command on Node 1 or Node 2. The purpose of this is that when we insert data into the database on the Master Node, the same data should be written to Node 1 and Node 2 instantly.
 
 
-## Eğer kurulumumuzun başarılı olduğu kontrol etmek istiyorsaki aşağıdaki komutu Node 1 veya Node 2'de çalıştırın. 
-Bunu yapmamızdaki amaç Master Node'da database e bir data insert ettiğimizde aynı datayı Node 1 ve Node 2'e yazması gerekiyor anlık olarak.
+## Eğer kurulumumuzun başarılı olduğu kontrol etmek istiyorsaki aşağıdaki komutu Node 1 veya Node 2'de çalıştırın. Bunu yapmamızdaki amaç Master Node'da database e bir data insert ettiğimizde aynı datayı Node 1 ve Node 2'e yazması gerekiyor anlık olarak.
 
 ```
 db.employees.find()
