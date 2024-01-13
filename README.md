@@ -483,3 +483,228 @@ systemctl restart mongod
 ![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/17ed8a99-89a6-40b0-8b3a-2634367a9a3e)
 
 
+## Run the following commands to change the names of our machines.
+
+## Makinelerimizin isimlerini değiştirmek için aşağıdaki komutları çalıştırınız. 
+
+
+## For Master Node.
+
+## Master Node için.
+
+```
+hostnamectl set-hostname mongo-master-node
+```
+
+## For Node 1.
+
+## Node 1 için.
+
+```
+hostnamectl set-hostname mongo-node-1
+```
+
+## For Node 2.
+
+## Node 2 için.
+
+```
+hostnamectl set-hostname mongo-node-2
+```
+
+
+## Connect to our database from the Master Node server using the 'mongosh' command.
+
+## 'mongosh' komutunu kullanarak Master Node sunucusundan veritabanına bağlanın.
+
+
+```
+mongosh
+```
+
+## Switch to the admin user.
+
+## Yönetici kullanıcıya geçin.
+
+
+```
+use admin
+```
+
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/517d5e4c-3319-4a1d-86df-d8aba488d27b)
+
+
+## Run the following command to set up the cluster.
+
+## Cluster kurulu için aşağıdaki komutu çalıştırın.
+
+
+```
+rs.initiate()
+```
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/3d7fb968-53eb-4aa4-bb55-b0656553346f)
+
+
+
+
+## Run the following query to add Node 1.
+
+## Node 1'i eklemek için aşağıdaki sorguyu çalıştırın.
+
+```
+rs.add("mongo-node-1")
+```
+
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/4c5d3b46-5807-4064-a169-ace1b4d4036c)
+
+
+## Run the following query to add Node 2.
+
+## Node 2'i eklemek için aşağıdaki sorguyu çalıştırın.
+
+```
+rs.add("mongo-node-2")
+```
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/8c3545cb-bf00-4876-b00b-8d3e4dcc1d92)
+
+
+## *
+
+![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/32de71d1-0f06-4d1c-93cd-5451f38b5474)
+ 
+
+
+## And finally, run the following command to complete the cluster setup.
+
+## ! NOTE: If the output of this command is not as expected, there may be an issue; review all your installations once again.
+
+## Ve son olarak Cluster kurulumunu tamamlamak için aşağıdaki komutu çalıştırın.
+
+## ! NOT: Bu komutun çıktısı beklendiği gibi değilse bir sorun olabilir; tüm kurulumlarınızı bir kez daha gözden geçirin.
+
+
+```
+rs.status()
+```
+
+
+```
+{
+  set: 'mongorepl',
+  date: ISODate('2024-01-13T05:52:23.380Z'),
+  myState: 1,
+  term: Long('1'),
+  syncSourceHost: '',
+  syncSourceId: -1,
+  heartbeatIntervalMillis: Long('2000'),
+  majorityVoteCount: 1,
+  writeMajorityCount: 1,
+  votingMembersCount: 1,
+  writableVotingMembersCount: 1,
+  optimes: {
+    lastCommittedOpTime: { ts: Timestamp({ t: 1705125133, i: 1 }), t: Long('1') },
+    lastCommittedWallTime: ISODate('2024-01-13T05:52:13.983Z'),
+    readConcernMajorityOpTime: { ts: Timestamp({ t: 1705125133, i: 1 }), t: Long('1') },
+    appliedOpTime: { ts: Timestamp({ t: 1705125133, i: 1 }), t: Long('1') },
+    durableOpTime: { ts: Timestamp({ t: 1705125133, i: 1 }), t: Long('1') },
+    lastAppliedWallTime: ISODate('2024-01-13T05:52:13.983Z'),
+    lastDurableWallTime: ISODate('2024-01-13T05:52:13.983Z')
+  },
+  lastStableRecoveryTimestamp: Timestamp({ t: 1705125123, i: 1 }),
+  electionCandidateMetrics: {
+    lastElectionReason: 'electionTimeout',
+    lastElectionDate: ISODate('2024-01-13T05:45:13.922Z'),
+    electionTerm: Long('1'),
+    lastCommittedOpTimeAtElection: { ts: Timestamp({ t: 1705124713, i: 1 }), t: Long('-1') },
+    lastSeenOpTimeAtElection: { ts: Timestamp({ t: 1705124713, i: 1 }), t: Long('-1') },
+    numVotesNeeded: 1,
+    priorityAtElection: 1,
+    electionTimeoutMillis: Long('10000'),
+    newTermStartDate: ISODate('2024-01-13T05:45:13.933Z'),
+    wMajorityWriteAvailabilityDate: ISODate('2024-01-13T05:45:13.939Z')
+  },
+  members: [
+    {
+      _id: 0,
+      name: 'mongo-master-node:27017',
+      health: 1,
+      state: 1,
+      stateStr: 'PRIMARY',
+      uptime: 2501,
+      optime: { ts: Timestamp({ t: 1705125133, i: 1 }), t: Long('1') },
+      optimeDate: ISODate('2024-01-13T05:52:13.000Z'),
+      lastAppliedWallTime: ISODate('2024-01-13T05:52:13.983Z'),
+      lastDurableWallTime: ISODate('2024-01-13T05:52:13.983Z'),
+      syncSourceHost: '',
+      syncSourceId: -1,
+      infoMessage: '',
+      electionTime: Timestamp({ t: 1705124713, i: 2 }),
+      electionDate: ISODate('2024-01-13T05:45:13.000Z'),
+      configVersion: 3,
+      configTerm: 1,
+      self: true,
+      lastHeartbeatMessage: ''
+    },
+    {
+      _id: 1,
+      name: 'mongo-node-1:27017',
+      health: 0,
+      state: 8,
+      stateStr: '(not reachable/healthy)',
+      uptime: 0,
+      optime: { ts: Timestamp({ t: 0, i: 0 }), t: Long('-1') },
+      optimeDurable: { ts: Timestamp({ t: 0, i: 0 }), t: Long('-1') },
+      optimeDate: ISODate('1970-01-01T00:00:00.000Z'),
+      optimeDurableDate: ISODate('1970-01-01T00:00:00.000Z'),
+      lastAppliedWallTime: ISODate('1970-01-01T00:00:00.000Z'),
+      lastDurableWallTime: ISODate('1970-01-01T00:00:00.000Z'),
+      lastHeartbeat: ISODate('2024-01-13T05:52:21.794Z'),
+      lastHeartbeatRecv: ISODate('1970-01-01T00:00:00.000Z'),
+      pingMs: Long('0'),
+      lastHeartbeatMessage: 'Error connecting to mongo-node-1:27017 (192.168.152.157:27017) :: caused by :: Connection refused',
+      syncSourceHost: '',
+      syncSourceId: -1,
+      infoMessage: '',
+      configVersion: -1,
+      configTerm: -1
+    },
+    {
+      _id: 2,
+      name: 'mongo-node-2:27017',
+      health: 0,
+      state: 8,
+      stateStr: '(not reachable/healthy)',
+      uptime: 0,
+      optime: { ts: Timestamp({ t: 0, i: 0 }), t: Long('-1') },
+      optimeDurable: { ts: Timestamp({ t: 0, i: 0 }), t: Long('-1') },
+      optimeDate: ISODate('1970-01-01T00:00:00.000Z'),
+      optimeDurableDate: ISODate('1970-01-01T00:00:00.000Z'),
+      lastAppliedWallTime: ISODate('1970-01-01T00:00:00.000Z'),
+      lastDurableWallTime: ISODate('1970-01-01T00:00:00.000Z'),
+      lastHeartbeat: ISODate('2024-01-13T05:52:21.795Z'),
+      lastHeartbeatRecv: ISODate('1970-01-01T00:00:00.000Z'),
+      pingMs: Long('0'),
+      lastHeartbeatMessage: 'Error connecting to mongo-node-2:27017 (192.168.152.158:27017) :: caused by :: Connection refused',
+      syncSourceHost: '',
+      syncSourceId: -1,
+      infoMessage: '',
+      configVersion: -1,
+      configTerm: -1
+    }
+  ],
+  ok: 1,
+  '$clusterTime': {
+    clusterTime: Timestamp({ t: 1705125133, i: 1 }),
+    signature: {
+      hash: Binary.createFromBase64('AAAAAAAAAAAAAAAAAAAAAAAAAAA=', 0),
+      keyId: Long('0')
+    }
+  },
+  operationTime: Timestamp({ t: 1705125133, i: 1 })
+}
+
+```
