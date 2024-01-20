@@ -714,14 +714,14 @@ rs.status()
 ```
 
 
-## To verify our cluster setup, we will create a new database and manually add data. Run the following queries sequentially.
+## To verify our cluster setup, we will create a new table in the database and manually add data. Run the following queries sequentially.
 
 ## ! NOTE: If the output of these commands is not as expected, there may be an issue; review all your installations once again.
 
 
 
 
-## Cluster yapımızı kontrol etmek için yeni bir veritabanı oluşturup manuel data ekleyeceğiz bunun için aşağıdaki sorguları sırası ile çalıştırmamız gerekiyor. 
+## Cluster yapımızı kontrol etmek için veritabanına yeni bir tablo oluşturup manuel data ekleyeceğiz bunun için aşağıdaki sorguları sırası ile çalıştırmamız gerekiyor. 
 
 ## ! NOT : Bu sorguların çıktısı aşağıdaki gibi değilse bir problem var demektir tekrardan tüm kurulumlarınızı gözden geçirin. 
 
