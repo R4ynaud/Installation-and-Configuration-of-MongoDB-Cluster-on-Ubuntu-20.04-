@@ -572,7 +572,9 @@ rs.add("mongo-node-2")
 ![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/8c3545cb-bf00-4876-b00b-8d3e4dcc1d92)
 
 
-## *
+## After adding Node 1 and Node 2, you should get an output similar to the following.
+
+## Node 1 ve Node 2’yi ekledikten sonra aşağıdakine benzer bir çıktı almalısınız.
 
 ![image](https://github.com/R4ynaud/Installation-and-Configuration-of-MongoDB-Cluster-on-Ubuntu-20.04-/assets/93924485/32de71d1-0f06-4d1c-93cd-5451f38b5474)
  
